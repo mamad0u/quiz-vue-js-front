@@ -4,7 +4,7 @@
    <my-header></my-header>
    <div class="content">
      <div class="categorie">
-      <p>Histoire</p> 
+      <h2>Histoire</h2> 
      </div>
    </div>
  </div>
@@ -15,7 +15,7 @@
    </div>
      <div class="content">
      <div class="categorie">
-      <p>Géographie</p> 
+      <h2>Géographie</h2> 
      </div>
    </div>
  </div>
