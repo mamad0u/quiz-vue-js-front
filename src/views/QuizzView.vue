@@ -38,8 +38,8 @@ export default {
    console.log(url)
     this.axios.get(url).then((questions) => {
       this.question = questions.data[this.getRandomInt(questions.data.length)]
-      this.propositions = JSON.parse(questions.data[0].reponses).propositions;
-      console.log(this.propositions)
+      this.propositions = JSON.parse(this.question.reponses).propositions;
+      console.log(this.question.goodreponse)
     })
   },methods:{
     getRandomInt(max) {
