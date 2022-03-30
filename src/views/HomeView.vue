@@ -10,12 +10,16 @@
  </div>
  <div class="droite">
    <div class="droite-header">
-    <p>Speedy</p>
+     <p>ezgzegezg</p>
      <MySwipButton></MySwipButton>
    </div>
      <div class="content">
      <div class="categorie">
+<<<<<<< HEAD
       <h2>Géographie</h2> 
+=======
+
+>>>>>>> 0112003e36ef6bd7a160d20f29beab5085583b54
      </div>
    </div>
  </div>
