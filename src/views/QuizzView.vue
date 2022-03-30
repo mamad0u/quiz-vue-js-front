@@ -10,6 +10,22 @@
 </template>
 
 <script>
+export default {
+ name:"QuizView",
+ 
+ components:{
+
+ }, mounted() {
+
+   let url = 'http://localhost:3000/quiz/' + this.$route.params.slug;
+   console.log(url)
+    this.axios.get(url).then((response) => {
+      console.log(response.data)
+    })
+  },computed:{
+    
+  }
+}
 
 </script>
 
