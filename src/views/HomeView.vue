@@ -10,12 +10,12 @@
  </div>
  <div class="droite">
    <div class="droite-header">
-    <p>Speedy</p>
+     <p>ezgzegezg</p>
      <MySwipButton></MySwipButton>
    </div>
      <div class="content">
      <div class="categorie">
-      <p>Géographie</p> 
+
      </div>
    </div>
  </div>
