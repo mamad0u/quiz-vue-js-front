@@ -17,10 +17,13 @@ export default {
 
 <style scoped>
   nav {
+    height: 34px;
       margin: 30px auto;
       width: 80%;
     display: flex;
     justify-content: space-between;
+  align-items: center;
+
   }
   a {
     text-decoration: none;
