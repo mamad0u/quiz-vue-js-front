@@ -71,5 +71,8 @@ color: white;
   color:#202424;
 font-size: 50px;
 }
+.thematiques li a{
+  color: inherit;
+}
 
 </style>
