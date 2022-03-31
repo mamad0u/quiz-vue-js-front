@@ -20,12 +20,14 @@
  </div>
  <div class="good-bad good" v-if="reponseFinal">
    <p>bravo la vrai réponse était {{question.goodreponse}}</p>
+   <router-link to="/">home</router-link>
   
 
  </div>
  <div class="good-bad bad" v-else-if="reponseFinal == false">
    <p>dommage la bonne réponse etait {{question.goodreponse}}</p>
    <p>vous avez repondu {{proposition}}</p>
+   <router-link to="/">home</router-link>
  </div>
 </main>
 
@@ -47,7 +49,6 @@ export default {
     if(this.$store.getters.valueSwitch){
          setInterval(()=>{
            this.timer++
-           console.log(this.timer)
         },1000);  
         } else {
           console.log("false")
@@ -71,13 +72,22 @@ export default {
       goodAnswer(proposition){
         if(proposition == this.question.goodreponse){
           this.reponseFinal = true
-          this.incrementScore()
+          if(this.$store.getters.valueSwitch && this.timer <= 5){
+            this.incrementScoreSpeddy(2)
+          }if(this.$store.getters.valueSwitch && this.timer > 5 && this.timer <= 10){
+            this.incrementScoreSpeddy(1.5)
+          } else if (this.$store.getters.valueSwitch == false || this.timer > 10){
+            this.incrementScore();
+          }
+          
 
         } else {
           this.reponseFinal = false
         }
       }, incrementScore(){
         this.$store.commit('incrementScore');
+      },incrementScoreSpeddy(value){
+        this.$store.commit('incrementScoreSpeddy',value);
       }
      
   },computed:{

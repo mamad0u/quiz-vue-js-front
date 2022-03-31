@@ -21,6 +21,9 @@ export default createStore({
     },
     incrementScore(state) {
       state.score++
+    },
+    incrementScoreSpeddy(state, value) {
+      state.score = state.score + value
     }
   },
   actions: {},
