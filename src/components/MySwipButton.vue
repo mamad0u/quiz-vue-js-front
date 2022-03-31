@@ -20,6 +20,7 @@ export default {
   methods:{
       switchB(){
        this.$store.commit('switchE', this.siwtchBtn);
+       this.siwtchBtn =this.$store.getters.valueSwitch
       }
   },
   computed:{

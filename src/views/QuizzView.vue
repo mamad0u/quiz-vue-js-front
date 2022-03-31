@@ -5,24 +5,26 @@
 
    <div class="question">
      <h3>{{question.thematique}}</h3>
-     <p>
-       
-       {{question.question}}
-         {{valueSwitch}}
+     <p >
+       {{question.question}} 
     
      </p>
-      {{speedy()}}
+     {{valueSwitch}}
       {{timer}}
    </div>
  </div>
  <div class="droite">
-  <div class="choix" v-for="proposition in propositions" :key="proposition">
-  <p>
+  <div class="choix" v-for="proposition in propositions" :key="proposition" @click="goodAnswer(proposition)">
     {{proposition}}
-  
-
-  </p>
   </div>
+ </div>
+ <div class="good-bad good" v-if="reponseFinal">
+   <p>bravo la vrai réponse était {{question.goodreponse}}</p>
+
+ </div>
+ <div class="good-bad bad" v-else-if="reponseFinal == false">
+   <p>dommage la bonne réponse etait {{question.goodreponse}}</p>
+   <p>vous avez repondu {{proposition}}</p>
  </div>
 </main>
 
@@ -34,7 +36,8 @@ export default {
    return {
      question: "",
      propositions: null,
-     timer:0
+     timer:0,
+     reponseFinal:null
    }
  },
  components:{
@@ -64,8 +67,14 @@ export default {
     getRandomInt(max) {
       return Math.floor(Math.random() * max);
     },
-      speedy(){
-
+      goodAnswer(proposition){
+        if(proposition == this.question.goodreponse){
+          this.reponseFinal = true
+          console.log("vrai")
+        } else {
+          this.reponseFinal = false
+          console.log("faux")
+        }
       }
   },computed:{
     valueSwitch(){
@@ -78,13 +87,54 @@ export default {
 
 <style scoped>
 .gauche{
-width: 100%;
+flex: 50%;
 height: 100vh;
 background-color: #3CC7A1;
 }
 .droite{
-width: 100%;
+display: flex;
+flex-wrap: wrap;
+flex: 50%;
 height: 100vh;
 background-color: #202424;
+
+}
+.choix {
+height: 50%;
+width: 50%;
+color: white;
+border: 2px solid black;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: border .2s ease-in-out;
+cursor: pointer;
+}
+.choix:hover {
+  border: 2px solid #3CC7A1;
+}
+.question h3 {
+  font-size: 3rem;
+  margin-top: 7rem;
+}
+.question p {
+font-size: 1.4rem;
+font-weight: 400;
+max-width: 500px;
+margin: 20px auto;
+}
+.good-bad {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.good {
+  background: #3CC7A1;
+}
+.bad {
+background: red;
 }
 </style>
