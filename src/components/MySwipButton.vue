@@ -1,18 +1,31 @@
 <template>
     <!-- Rounded switch -->
     <label class="switch">
-        <input type="checkbox" @change="switchbtn()">
+        <input type="checkbox"  @change="switchB()" v-model="siwtchBtn"  name="switch" id="switch">
         <span class="slider round"></span>
     </label>
+  <div class="div">
+    {{ valueSwitch }}
+  </div>
 </template>
 
 <script>
 export default {
   name: 'MySwipButton',
+  data(){
+    return{
+      siwtchBtn:false
+    }
+  },
   methods:{
-      switchbtn(){
-          console.log("fegerger")
+      switchB(){
+       this.$store.commit('switchE', this.siwtchBtn);
       }
+  },
+  computed:{
+    valueSwitch(){
+      return this.$store.getters.valueSwitch;
+    }
   }
 }
 </script>
@@ -28,9 +41,9 @@ export default {
 
 /* Hide default HTML checkbox */
 .switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
 }
 
 /* The slider */

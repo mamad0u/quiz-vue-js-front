@@ -5,14 +5,16 @@ import {
 export default createStore({
   state: {
     score: 0,
-    thematiqueG: ''
+    switchBtn: false
   },
   getters: {
-
+    valueSwitch(state) {
+      return state.switchBtn;
+    }
   },
   mutations: {
-    addThem(state, thematique) {
-      state.thematiqueG = thematique
+    switchE(state, switchBtnValue) {
+      state.switchBtn = switchBtnValue
     },
   },
   actions: {},
