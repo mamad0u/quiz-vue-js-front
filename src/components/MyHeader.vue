@@ -2,7 +2,7 @@
   <header class="main-header">
     <nav>
       <router-link to="/">Accueil</router-link>
-      <div class="score">score</div>
+      <div class="score">score {{valueScore}}</div>
     </nav>
   </header>
 </template>
@@ -10,6 +10,12 @@
 <script>
 export default {
   name: 'MyHeader',
+  computed:{
+  
+    valueScore(){
+      return this.$store.getters.valueScore
+    },
+  }
 
 }
 
