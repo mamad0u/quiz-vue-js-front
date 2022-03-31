@@ -2,8 +2,8 @@
 <main>
  <div class="gauche">
    <my-header></my-header>
-
    <div class="question">
+     
      <h3>{{question.thematique}}</h3>
      <p >
        {{question.question}} 
@@ -20,6 +20,7 @@
  </div>
  <div class="good-bad good" v-if="reponseFinal">
    <p>bravo la vrai réponse était {{question.goodreponse}}</p>
+  
 
  </div>
  <div class="good-bad bad" v-else-if="reponseFinal == false">
@@ -70,16 +71,22 @@ export default {
       goodAnswer(proposition){
         if(proposition == this.question.goodreponse){
           this.reponseFinal = true
-          console.log("vrai")
+          this.incrementScore()
+
         } else {
           this.reponseFinal = false
-          console.log("faux")
         }
+      }, incrementScore(){
+        this.$store.commit('incrementScore');
       }
+     
   },computed:{
     valueSwitch(){
       return this.$store.getters.valueSwitch
-    }
+    },
+    valueScore(){
+      return this.$store.getters.valueScore
+    },
   }
 }
 

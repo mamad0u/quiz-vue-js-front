@@ -10,12 +10,18 @@ export default createStore({
   getters: {
     valueSwitch(state) {
       return state.switchBtn;
+    },
+    valueScore(state) {
+      return state.score;
     }
   },
   mutations: {
     switchE(state, switchBtnValue) {
       state.switchBtn = switchBtnValue
     },
+    incrementScore(state) {
+      state.score++
+    }
   },
   actions: {},
   modules: {}

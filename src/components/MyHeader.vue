@@ -11,7 +11,6 @@
 export default {
   name: 'MyHeader',
   computed:{
-  
     valueScore(){
       return this.$store.getters.valueScore
     },
