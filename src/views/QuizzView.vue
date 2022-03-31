@@ -40,11 +40,15 @@ export default {
  components:{
 
  }, mounted() {
-
-    setInterval(()=>{
+    if(this.$store.getters.valueSwitch){
+         setInterval(()=>{
            this.timer++
            console.log(this.timer)
         },1000);  
+        } else {
+          console.log("false")
+        }
+   
 
    let url = 'http://localhost:3000/quiz/' + this.$route.params.slug;
    console.log(url)
@@ -61,7 +65,7 @@ export default {
       return Math.floor(Math.random() * max);
     },
       speedy(){
-        
+
       }
   },computed:{
     valueSwitch(){
