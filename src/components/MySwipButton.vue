@@ -4,9 +4,7 @@
         <input type="checkbox"  @change="switchB()" v-model="siwtchBtn"  name="switch" id="switch">
         <span class="slider round"></span>
     </label>
-  <div class="div">
-    {{ valueSwitch }}
-  </div>
+
 </template>
 
 <script>
