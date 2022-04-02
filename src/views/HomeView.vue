@@ -4,7 +4,7 @@
    <my-header></my-header>
      <div class="swip-mobile">
         <span>Speedy</span>
-      <MySwipButton></MySwipButton>
+      <MySwipButton/>
       </div>
    <div class="content">
      <div class="categorie">
@@ -22,7 +22,7 @@
   <div class="droite-header">
      <div class="swip-desk">
          <span>Speedy</span>
-     <MySwipButton></MySwipButton>
+      <MySwipButton/>
      </div>
    
    </div>
@@ -95,10 +95,12 @@ font-size: 50px;
   color: inherit;
 }
 .swip-mobile{
+  width: 200px;
+  top: 10px;
+  right: 5px;
+  z-index: 3;
   position:absolute;
     height: 5vh;
-    margin: 20px auto;
-    width: 90%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -161,6 +163,7 @@ font-size: 45px;
 }
 .swip-mobile{
 display: none;
+
 }
 .categorie{
   height: 100vh;
