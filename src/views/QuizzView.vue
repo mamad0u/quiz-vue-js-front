@@ -6,14 +6,15 @@
      <h3>Thématique</h3>
      <h4>{{question.thematique}}</h4>
      <p >
-       {{question.question}} 
-    
+       {{question.question}}
      </p>
   
    </div>
  </div>
  <div class="droite">
     <div class="good-bad good" v-if="reponseFinal">
+      {{deleteQuestion(question)}}
+      {{start()}}
       <div class="contenu">
    <h5>VRAI <span>+{{scoreAffichage}}pts</span></h5>
    <p>bravo la vrai réponse était:</p>
@@ -71,11 +72,18 @@ export default {
       }
 
   },methods:{
+    start() {
+        this.$confetti.start();
+        setInterval(()=>{
+          this.stop()
+        },3000);  
+      }, stop() {
+        this.$confetti.stop();
+      },
     getRandomInt(max) {
       return Math.floor(Math.random() * max);
     },deleteQuestion(question){
       this.questions.splice(question,1)
-      console.log(this.questions)
       console.log(question)
 
     },
@@ -197,6 +205,7 @@ background-color: #202424;
 background-color: #202424;
 
 }
+
 .ac{
     display: flex;
     width: 100%;
@@ -217,6 +226,7 @@ background-color: #202424;
  .retour-acceuil a{
     color: #202424;
     }
+    
 @media screen and (min-width:600px){
   .droite{
 display: flex;

@@ -7,6 +7,7 @@
       <MySwipButton/>
       </div>
    <div class="content">
+    
      <div class="categorie">
       <h2>Histoire</h2> 
         <ul class="thematiques">
@@ -56,15 +57,12 @@ export default {
  methods:{
    
  }
+  
 }
 </script>
 
 <style >
-.ac{
-      display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+
 .droite-header{
   margin: 30px auto;
   width: 80%;
@@ -96,7 +94,7 @@ font-size: 50px;
 }
 .swip-mobile{
   width: 200px;
-  top: 10px;
+  top: 18px;
   right: 5px;
   z-index: 3;
   position:absolute;

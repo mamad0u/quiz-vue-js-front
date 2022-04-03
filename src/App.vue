@@ -4,12 +4,14 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;300;400;500;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .gauche{
@@ -17,7 +19,7 @@ width: 100%;
 height: 50vh;
 background-color: #202424;
 color: #F6EFEF;
-  position: relative;
+position: relative;
 
 }
 .droite{
