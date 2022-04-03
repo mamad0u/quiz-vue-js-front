@@ -43,9 +43,11 @@ export default {
  name:"QuizView",data(){
    return {
      question: "",
+     questions:null,
      propositions: null,
      timer:0,
      reponseFinal:null,
+     update:false,
      scoreAffichage:1
 
    }
@@ -57,20 +59,25 @@ export default {
          setInterval(()=>{
            this.timer++
         },1000);  
-        } else {
-          console.log("false")
         }
-   
-   let url = 'http://localhost:3000/quiz/' + this.$route.params.slug;
-   console.log(url)
-    this.axios.get(url).then((questions) => {
-   this.question = questions.data[this.getRandomInt(questions.data.length)]
+      if(this.update == false) {
+      let url = 'http://localhost:3000/quiz/' + this.$route.params.slug;
+      this.axios.get(url).then((questions) => {
+      this.questions = questions.data
+      this.question = this.questions[this.getRandomInt(this.questions.length)]
       this.propositions = JSON.parse(this.question.reponses);
+      this.update = true
     })
+      }
 
   },methods:{
     getRandomInt(max) {
       return Math.floor(Math.random() * max);
+    },deleteQuestion(question){
+      this.questions.splice(question,1)
+      console.log(this.questions)
+      console.log(question)
+
     },
       goodAnswer(proposition){
         if(proposition == this.question.goodreponse){
@@ -88,7 +95,6 @@ export default {
 
           }
           
-
         } else {
           this.reponseFinal = false
         }
