@@ -64,9 +64,8 @@ export default {
    let url = 'http://localhost:3000/quiz/' + this.$route.params.slug;
    console.log(url)
     this.axios.get(url).then((questions) => {
-      this.question = questions.data[this.getRandomInt(questions.data.length)]
-      this.propositions = JSON.parse(this.question.reponses).propositions;
-      console.log(this.question.goodreponse)
+   this.question = questions.data[this.getRandomInt(questions.data.length)]
+      this.propositions = JSON.parse(this.question.reponses);
     })
 
   },methods:{

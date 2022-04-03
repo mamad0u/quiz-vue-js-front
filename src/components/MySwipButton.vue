@@ -1,7 +1,7 @@
 <template>
     <!-- Rounded switch -->
     <label class="switch">
-        <input type="checkbox"  @change="switchB()" v-model="siwtchBtn"  name="switch" id="switch">
+        <input type="checkbox"  @change="switchB()" v-model="siwtchBtn"  name="switch" >
         <span class="slider round"></span>
     </label>
 
