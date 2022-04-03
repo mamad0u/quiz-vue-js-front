@@ -96,6 +96,7 @@ font-size: 50px;
 }
 .swip-mobile{
   position:absolute;
+  z-index: 3;
     height: 5vh;
     margin: 20px auto;
     width: 90%;
