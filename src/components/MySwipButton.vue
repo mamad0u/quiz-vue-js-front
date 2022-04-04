@@ -14,11 +14,15 @@ export default {
     return{
       siwtchBtn:false
     }
+  },mounted(){
+    if(this.valueSwitch){
+      this.siwtchBtn = this.valueSwitch
+    }
   },
   methods:{
       switchB(){
        this.$store.commit('switchE', this.siwtchBtn);
-       this.siwtchBtn =this.$store.getters.valueSwitch
+    
       }
   },
   computed:{
