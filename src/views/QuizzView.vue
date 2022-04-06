@@ -5,7 +5,7 @@
    <div class="question">
      <h3>Thématique</h3>
      <h4>{{question.thematique}}</h4>
-     <p >
+     <p>
        {{question.question}}
      </p>
   

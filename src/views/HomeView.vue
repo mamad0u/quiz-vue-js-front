@@ -131,6 +131,18 @@ font-size: 50px;
 font-size: 35px;
 color: white;
 }
+.gauche .thematiques li {
+  transition: border .2s ease;
+}
+.gauche .thematiques li:hover {
+border: 1px solid #3CC7A1;
+}
+.droite .thematiques li {
+  transition: border .2s ease;
+}
+.droite .thematiques li:hover {
+border: 1px solid black;
+}
 .droite .categorie{
   color:#202424;
 font-size: 35px;
